@@ -1,16 +1,46 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import Main from "./Components/Main";
+import About from "./pages/About";
+import Homepage from "./pages/Homepage";
+import Login from "./pages/Login";
+import Menu from "./pages/Menu";
+import Order from "./pages/Order";
+import Reservations from "./pages/Reservation";
+import Root from "./pages/Root";
 
-function App() {
-  return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  );
+export default function App() {
+  const routers = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        {
+          index: true,
+          element: <Homepage />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "menu",
+          element: <Menu />,
+        },
+        {
+          path: "order-online",
+          element: <Order />,
+        },
+        {
+          path: "reservations",
+          element: <Reservations />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={routers} />;
 }
-
-export default App;
