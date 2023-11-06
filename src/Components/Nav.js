@@ -4,7 +4,7 @@ import style from "./Nav.module.css";
 export default function Nav() {
   return (
     <nav>
-      <ul className={style.nav}>
+      <ul className={style.navlinks}>
         <li>
           <Link to="/">HOME</Link>
         </li>

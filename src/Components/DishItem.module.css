@@ -1,0 +1,58 @@
+.container {
+  font-family: var(--font-family2);
+  width: 250px;
+  height: 400px;
+  border-radius: 16px;
+  background-color: var(--primary-color);
+}
+
+.container img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.container .wrapper {
+  padding: 2rem;
+}
+
+.container .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.container .top .title,
+.container .top .price {
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.container .top .title {
+  color: var(--highlight-color);
+}
+
+.container .top .price {
+  color: var(--primary-color2);
+}
+
+.container .description {
+  font-family: var(--font-family1);
+  font-size: 1.4rem;
+  color: var(--secondary-color2);
+  margin-bottom: 2rem;
+}
+
+.container .delivery {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.container .delivery .text {
+  font-family: var(--font-family1);
+  color: var(--secondary-color2);
+}

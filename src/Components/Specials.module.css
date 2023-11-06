@@ -1,0 +1,32 @@
+.dish {
+  max-width: 960px;
+  height: 840px;
+  margin: 11.2rem auto 0;
+}
+
+.head,
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head {
+  margin-bottom: 4.8rem;
+}
+
+.head h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: var(--font-family2);
+}
+
+.head button {
+  font-family: var(--font-family1);
+  font-weight: 800;
+  background: var(--primary-color2);
+  border: none;
+  outline: none;
+  padding: 8px 1.6rem;
+  border-radius: 1.6rem;
+}

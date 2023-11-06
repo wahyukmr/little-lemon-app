@@ -1,0 +1,55 @@
+.container {
+  height: 390px;
+  background-color: var(--primary-color);
+}
+
+.content {
+  display: flex;
+  column-gap: 4rem;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.frontImage {
+  border-radius: 1.6rem;
+  transform: translateY(35%);
+}
+
+.backImage {
+  border-radius: 1.6rem;
+  transform: translate(60%, 8%);
+}
+
+.article {
+  color: var(--highlight-color);
+  margin-top: 4rem;
+  max-width: 400px;
+}
+
+.article h1 {
+  font-size: 6.4rem;
+  font-family: var(--font-family2);
+  color: var(--primary-color2);
+}
+
+.article h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: -3rem 0 2rem;
+}
+
+.article p {
+  font-family: var(--font-family1);
+}
+
+.article button {
+  font-family: var(--font-family1);
+  font-weight: 800;
+  background: var(--primary-color2);
+  border: none;
+  outline: none;
+  padding: 8px 1.6rem;
+  margin-top: 3rem;
+  border-radius: 1.6rem;
+}
