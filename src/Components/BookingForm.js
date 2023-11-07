@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const today = new Date();
-const todayString = today.toISOString().slice(0, 10);
+// const today = new Date();
+// const todayString = today.toISOString().slice(0, 10);
 
 export default function BookingForm({ onUserData, updateAvailableTimes, availableTimes }) {
-  const [date, setDate] = useState(todayString);
+  const [date, setDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [number, setNumber] = useState("");
   const [selectedOccasion, setSelectedOccasion] = useState("birthday");
@@ -33,6 +33,8 @@ export default function BookingForm({ onUserData, updateAvailableTimes, availabl
 
   useEffect(() => {
     console.log(availableTimes);
+    console.log("time:" + selectedTime);
+    console.log("date:" + date);
   });
 
   return (

@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import style from "./CallToAction.module.css";
 
 export default function CallToAction() {
+  const navigate = useNavigate();
+
+  const handleClickBtn = () => {
+    navigate("booking");
+  };
+
   return (
     <section className={style.container}>
       <div className={style.content}>
@@ -11,7 +18,9 @@ export default function CallToAction() {
             We are a family owned Mediterranean restaurant, focused on traditional recipes served
             with a modern twist.
           </p>
-          <button type="button">Reserve a Table</button>
+          <button type="button" onClick={handleClickBtn}>
+            Reserve a Table
+          </button>
         </article>
         <img
           src={require("../assets/lemon dessert.jpg")}

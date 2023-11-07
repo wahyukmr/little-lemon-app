@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
 
 const availableTimesByDate = {
@@ -37,18 +38,19 @@ const fetchAPI = (date) => {
 };
 
 const submitAPI = (formData) => {
+  console.log(formData.selectedTime);
   availableTimesByDate[formData.date] = availableTimesByDate[formData.date].filter(
-    (time) => time !== formData.time
+    (time) => time !== formData.selectedTime
   );
 
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (formData) {
-        resolve(true); // Simulate successful submission
+        resolve(availableTimesByDate[formData.date]);
       } else {
         reject(new Error("Form submission failed."));
       }
-    }, 1000); // Simulate API delay
+    }, 1000);
   });
 };
 
@@ -63,6 +65,8 @@ const reducer = (state, action) => {
 
 export default function BookingPage() {
   const [availableTimes, dispatch] = useReducer(reducer, []);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTimes = async (date) => {
@@ -81,14 +85,24 @@ export default function BookingPage() {
   const handleSelectedDate = async (date) => {
     try {
       const times = await fetchAPI(date);
+      console.log(times);
       dispatch({ type: "UPDATE_TIMES", times });
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleDataUser = (data) => {
-    console.log(data);
+  const handleDataUser = async (dataUser) => {
+    try {
+      const times = await submitAPI(dataUser);
+      console.log("data:" + times);
+      dispatch({ type: "UPDATE_TIMES", times });
+      if (times) {
+        navigate("success");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
